@@ -1,0 +1,30 @@
+#######################################
+# Syntax Coloring Map For tank_leds
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+Lights KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+ledLeft		KEYWORD2
+ledRight	KEYWORD2
+lightsOn	KEYWORD2
+brake		KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+LEFT	LITERAL1
+RIGHT	LITERAL1
+REAR	LITERAL1
+ON	LITERAL1
+OFF	LITERAL1
