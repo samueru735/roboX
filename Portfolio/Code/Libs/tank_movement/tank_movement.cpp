@@ -6,19 +6,7 @@ Movement::Movement(){
   pinMode(motorLeftF, OUTPUT);  
   pinMode(motorLeftB, OUTPUT);  
 }
-/*void Movement::input(input){
-	switch (input){
-	  case 'w': drive(FORWARD); break;
-      case 's': drive(BACKWARDS); break;
-      case 'a': turn(LEFT); break;
-      case 'd': turn(RIGHT); break;
-      case 'm': uTurn(RIGHT);break;
-      case 'n': uTurn(LEFT);break;
-      case 'p': increaseSpeed(); break;
-      case 'o': decreaseSpeed(); break;
-      case 'x': brake(); break;
-	}
-}*/
+
 void Movement::drive(){
 	analogWrite(speedPinR, speedR);  // output speed as PWM value  
 	analogWrite(speedPinL, speedL);  // output speed as PWM value  
