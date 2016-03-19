@@ -8,7 +8,7 @@
 #define MIN 0
 #define MAX 255
 #define STANDARD_SPEED 255
-#define TURNING_SPEED 120
+#define TURNING_SPEED 55
 
 #include "Arduino.h"
 
