@@ -9,12 +9,12 @@ Movement movement;
 void setup() {     // set digital i/o pins as outputs:  
   Serial.begin(9600); 
 
-  leds.lightsOn(ON);
+  leds.lightsOn(ON);  // call lightsOn() method from Lights library
 } 
 
 void loop() {   
   if(Serial.available()){   
-    //movement.input(Serial.read()); 
+    //  read input and use Movent library to drive in the right direction
     switch(Serial.read()){      
       case 'w': movement.driveDirection(FORWARD); break;
       case 's': movement.driveDirection(BACKWARDS); break;
@@ -32,21 +32,21 @@ void loop() {
                 leds.brake(ON);
                 break;
     }
-    Serial.print("speed L: ");
-    Serial.println(movement.showSpeed(LEFT));
+    Serial.print("speed L: ");    
+    Serial.println(movement.showSpeed(LEFT)); // monitor speed (0-255) left motor
     Serial.print("speed R: ");
-    Serial.println(movement.showSpeed(RIGHT));
+    Serial.println(movement.showSpeed(RIGHT)); // monitor speed (0-255) right motor
   }
 
-  switch(movement.isDriving()){
-    case FORWARD: leds.brake(OFF); break;
-    case BACKWARDS: leds.blink(REAR); break;
-    case NONE: leds.brake(ON); break;
+  switch(movement.isDriving()){   
+    case FORWARD: leds.brake(OFF); break;     // normal lighting when moving forward
+    case BACKWARDS: leds.blink(REAR); break;  // flashing light when going backwards
+    case NONE: leds.brake(ON); break; // brake light
   }
   switch(movement.isTurning()){
-    case RIGHT: leds.blink(RIGHT); break;
-    case LEFT: leds.blink(LEFT); break;
-    case NONE: leds.lightsOn(ON); break;
+    case RIGHT: leds.blink(RIGHT); break;   // blink right
+    case LEFT: leds.blink(LEFT); break;     // blink left
+    case NONE: leds.lightsOn(ON); break;    // reset lights to normal
   }
 
   digitalWrite(ledPin, HIGH);  // status LED is always on  
