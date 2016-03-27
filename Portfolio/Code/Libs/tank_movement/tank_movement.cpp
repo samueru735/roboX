@@ -8,8 +8,8 @@ Movement::Movement(){
 }
 
 void Movement::drive(){
-	analogWrite(speedPinR, speedR);  // output speed as PWM value  
-	analogWrite(speedPinL, speedL);  // output speed as PWM value  
+	analogWrite(speedPinR, speedR);  // output speed right motor 0 - 255  
+	analogWrite(speedPinL, speedL);  // output speed left motor 0 - 255  
 }
 void Movement::driveDirection(int direction){
 	resetSpeed();
@@ -57,14 +57,14 @@ void Movement::uTurn(int direction)
 	}  
 }
 
-void Movement::brake(){
+void Movement::brake(){	// stop everything
 	resetSpeed();
 	digitalWrite(motorRightF, LOW);
 	digitalWrite(motorRightB, LOW);         
 	digitalWrite(motorLeftB, LOW);
 	digitalWrite(motorLeftF, LOW);
 }
-void Movement::increaseSpeed(){
+void Movement::increaseSpeed(){	// with increments of 50 ( 0 - 255)
 	if(speedR < MAX-50){
 		speedR += 50;
 	}  
@@ -78,7 +78,7 @@ void Movement::increaseSpeed(){
 		speedL = MAX;
 	}  
 }
-void Movement::decreaseSpeed(){
+void Movement::decreaseSpeed(){	// with increments of 50 ( 0 - 255)
 	if(speedR > MIN+50){
 		speedR -= 50;
 	}  

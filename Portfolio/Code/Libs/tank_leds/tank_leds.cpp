@@ -1,7 +1,7 @@
 #include "tank_leds.h"
 
-Lights::Lights(){
-  pinMode(led_50, OUTPUT);
+Lights::Lights(){		// all light pins to OUTPUT
+  pinMode(led_50, OUTPUT);		
   pinMode(led_51, OUTPUT);
   pinMode(led_52, OUTPUT);  
 }
@@ -24,8 +24,8 @@ void Lights::ledRight(int state)
 		digitalWrite(led_51, LOW);  
 	}  
 }
-void Lights::blink(int side){
-	if(side == LEFT ){
+void Lights::blink(int side){	// blink every 250ms (BLINK_DELAY) 
+	if(side == LEFT ){	
 		ledLeft(ON);
 		delay(BLINK_DELAY);
 		ledLeft(OFF);
