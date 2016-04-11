@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private String mac_address;
     private TextView tvConnStatus;
     private BluetoothConnection btConn;
-    private Button btnForward, btnBackwards, btnLeft, btnRight, btnStop, btnUturnLeft, btnUturnRight;
+    private Button btnForward, btnBackwards, btnLeft, btnRight, btnStop, btnUturnLeft, btnUturnRight, btnFaster, btnSlower;
     private TextView tvResult, tvSentData;
 
     @Override
@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         btnStop = (Button)findViewById(R.id.btnStop);
         btnUturnLeft = (Button)findViewById(R.id.btnUturnLeft);
         btnUturnRight = (Button)findViewById(R.id.btnUturnRight);
+        btnFaster = (Button)findViewById(R.id.faster);
+        btnSlower = (Button)findViewById(R.id.slower);
         tvResult = (TextView)findViewById(R.id.tvResult);
         tvSentData = (TextView)findViewById(R.id.tvSentData);
 
@@ -100,6 +102,26 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     btConn.sendData("m");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        btnFaster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    btConn.sendData("p");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        btnSlower.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    btConn.sendData("o");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -13,53 +13,80 @@
         android:text="Connectionstatus: "
         android:id="@+id/tvConnStatus"/>
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="10mm"
         android:text="Foward"
         android:layout_gravity="center"
-        android:id="@+id/btnForward"/>
+        android:id="@+id/btnForward"
+        android:textColor="#FAFAFA"
+        android:background="#212121"
+        />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center">
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="15mm"
+            android:layout_height="10mm"
+            android:layout_marginTop="2mm"
+            android:layout_marginLeft="2mm"
             android:text="Left"
-            android:id="@+id/btnLeft"/>
+            android:id="@+id/btnLeft"
+            android:textColor="#FAFAFA"
+            android:background="#212121"/>
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="15mm"
+            android:layout_height="10mm"
+            android:layout_marginTop="2mm"
+            android:layout_marginLeft="2mm"
             android:text="Stop"
-            android:id="@+id/btnStop"/>
+            android:id="@+id/btnStop"
+            android:textColor="#FAFAFA"
+            android:background="#212121"/>
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="15mm"
+            android:layout_height="10mm"
+            android:layout_marginTop="2mm"
+            android:layout_marginLeft="2mm"
             android:text="Right"
-            android:id="@+id/btnRight"/>
+            android:id="@+id/btnRight"
+            android:textColor="#FAFAFA"
+            android:background="#212121"/>
     </LinearLayout>
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="10mm"
+        android:layout_marginTop="2mm"
         android:layout_gravity="center"
         android:text="Backwards"
-        android:id="@+id/btnBackwards"/>
+        android:id="@+id/btnBackwards"
+        android:textColor="#FAFAFA"
+        android:background="#212121"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25mm"
+            android:layout_height="10mm"
+            android:layout_marginTop="2mm"
             android:text="U-turn Left"
-            android:id="@+id/btnUturnLeft"/>
+            android:id="@+id/btnUturnLeft"
+            android:textColor="#FAFAFA"
+            android:background="#212121"/>
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25mm"
+            android:layout_height="10mm"
+            android:layout_marginTop="2mm"
+            android:layout_marginLeft="2mm"
             android:text="U-turn right"
-            android:id="@+id/btnUturnRight"/>
+            android:id="@+id/btnUturnRight"
+            android:textColor="#FAFAFA"
+            android:background="#212121"/>
     </LinearLayout>
 
     <TextView
@@ -70,5 +97,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvResult"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="25mm"
+            android:layout_height="10mm"
+            android:layout_marginTop="2mm"
+            android:layout_marginLeft="2mm"
+            android:text="FASTER"
+            android:id="@+id/faster"
+            android:textColor="#FAFAFA"
+            android:background="#212121"/>
+
+        <Button
+            android:layout_width="25mm"
+            android:layout_height="10mm"
+            android:layout_marginTop="2mm"
+            android:layout_marginLeft="2mm"
+            android:text="SLOWER"
+            android:id="@+id/slower"
+            android:textColor="#FAFAFA"
+            android:background="#212121"/>
+    </LinearLayout>
 
 </LinearLayout>
