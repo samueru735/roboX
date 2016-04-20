@@ -23,16 +23,24 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="30mm"
+        android:layout_height="20mm"
         android:text="Buttons"
         android:id="@+id/knoppen"
         android:background="#999"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="30mm"
+        android:layout_height="20mm"
         android:text="Movement"
         android:id="@+id/move"
+        android:background="#999"
+        android:layout_marginTop="2mm"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="20mm"
+        android:text="DRAW"
+        android:id="@+id/draw"
         android:background="#999"
         android:layout_marginTop="2mm"/>
 </LinearLayout >

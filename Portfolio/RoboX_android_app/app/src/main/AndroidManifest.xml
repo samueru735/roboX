@@ -32,6 +32,10 @@
             android:name=".moveActivity"
             android:label="@string/title_activity_move" >
         </activity>
+        <activity
+            android:name=".DrawActivity"
+            android:label="@string/title_activity_draw" >
+        </activity>
     </application>
 
 </manifest>

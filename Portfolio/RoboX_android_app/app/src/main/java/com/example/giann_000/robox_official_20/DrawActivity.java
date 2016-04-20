@@ -1,6 +1,5 @@
 package com.example.giann_000.robox_official_20;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,45 +7,70 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class home extends AppCompatActivity {
+import java.io.IOException;
+
+public class DrawActivity extends AppCompatActivity {
+
+    private BluetoothConnection btConn;
+    public Button line, dash, dot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_draw);
 
-        Button knoppen = (Button) findViewById(R.id.knoppen);
-        Button movement = (Button) findViewById(R.id.move);
-        Button draw = (Button) findViewById(R.id.draw);
+        line = (Button) findViewById(R.id.line);
+        dash = (Button) findViewById(R.id.dash);
+        dot = (Button) findViewById(R.id.dot);
 
-        knoppen.setOnClickListener(new View.OnClickListener() {
+
+        try {
+            btConn.sendData("c");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        line.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(home.this, MainActivity.class);
-                startActivity(i);
+                try {
+                    btConn.sendData("f");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
-        movement.setOnClickListener(new View.OnClickListener() {
+        dash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(home.this, MainActivity.class);
-                startActivity(i);
+                try {
+                    btConn.sendData("g");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
-        draw.setOnClickListener(new View.OnClickListener() {
+        dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(home.this, DrawActivity.class);
-                startActivity(i);
+                try {
+                    btConn.sendData("h");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
-
     }
+
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_home, menu);
+        getMenuInflater().inflate(R.menu.menu_draw, menu);
         return true;
     }
 

@@ -1,5 +1,7 @@
 package com.example.giann_000.robox_official_20;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,12 +9,20 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
+
+    ListView listview;
+    ArrayAdapter<String> listAdapter;
+    String fragmentArray[] = {"Fragment 1", "Fragment 2"};
+
 
     private String mac_address;
     private TextView tvConnStatus;
@@ -24,6 +34,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        listview = (ListView)findViewById(R.id.listview);
+        listAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, fragmentArray);
+        listview.setAdapter(listAdapter);
+
+       listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               Fragment fragment;
+               switch (position){
+                   case 0:
+                       fragment = new FragmentOne();
+                       break;
+                    default:
+                        fragment = new FragmentOne();
+                        break;
+               }
+
+               //FragmentManager fragmnet = getSupportFragmentManager();
+               //fragmentManager.beginTransaction().replace(R.id.LinearLayout, fragment).commit();
+           }
+       });
+
+
         tvConnStatus = (TextView)findViewById(R.id.tvConnStatus);
         btnForward = (Button)findViewById(R.id.btnForward);
         btnBackwards = (Button)findViewById(R.id.btnBackwards);

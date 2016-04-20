@@ -12,6 +12,7 @@
     <string name="btnBtSettings">Bluetooth settings</string>
     <string name="title_activity_home">home</string>
     <string name="title_activity_move">moveActivity</string>
+    <string name="title_activity_draw">DrawActivity</string>
 
     //activity_bluetooth_connect
 
