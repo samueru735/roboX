@@ -15,12 +15,12 @@
 class Movement{
 private:
 // variables
-int motorRightF = 24;  //motor rechts vooruit
-int motorRightB = 25;  //motor rechts achteruit
-int motorLeftF = 22;  //motor links vooruit
-int motorLeftB = 23; //motor links achteruit
-int speedPinR = 6;
-int speedPinL = 7;
+int motorRightF = 22;  //motor rechts vooruit
+int motorRightB = 23;  //motor rechts achteruit
+int motorLeftF = 24;  //motor links vooruit
+int motorLeftB = 25; //motor links achteruit
+int speedPinR = 7;
+int speedPinL = 6;
 int speedR = MAX; //snelheid rechter motor
 int speedL = MAX; //snelheid linker motor
 // methods
