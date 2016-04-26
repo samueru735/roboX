@@ -11,13 +11,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="10mm"
-        android:text="Draw style"
+        android:text="Draw pattern"
         android:textSize="6mm"
         android:textColor="#434343"
         android:textStyle="italic"
         android:fontFamily="sans-serif-thin"
         android:layout_gravity="center"
-        />
+        android:id="@+id/" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="20mm"

@@ -1,3 +1,5 @@
+#include <Servo.h>
+#include <draw.h>
 #include <tank_movement.h>
 #include <tank_leds.h>
 
@@ -5,10 +7,13 @@
 int ledPin = 13;        // status LED 
 Lights leds;
 Movement movement;
+Draw draw;
+Servo myservo; //servo motor voor de pen
 
 void setup() {     // set digital i/o pins as outputs:  
   Serial.begin(9600); 
   leds.lightsOn(ON);  // call lightsOn() method from Lights library
+  myservo.attach(9);  //pin 9 wordt gebruikt voor de servo motor
 } 
 
 void loop() {   
@@ -30,6 +35,13 @@ void loop() {
       case 'x': movement.brake(); 
                 leds.brake(ON);
                 break;
+
+     //draw methode
+      case'c': //automati driving
+      case'f': draw.setStyle(DOT);break;
+      case'g': draw.setStyle(DASH);break;
+      case'h': draw.setStyle(LINE);break;
+      case't': draw.setStyle(STOP);break;
     }
     Serial.print("speed L: ");    
     Serial.println(movement.showSpeed(LEFT)); // monitor speed (0-255) left motor
@@ -48,5 +60,10 @@ void loop() {
   }
   digitalWrite(ledPin, HIGH);  // status LED is always on        
   movement.drive();  // drive it
+
+  draw.chose();
+  
+  myservo.write(draw.getVal());
+  delay(15);
 }
 
