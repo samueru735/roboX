@@ -1,7 +1,7 @@
 #include "tank_leds.h"
 
 Lights::Lights(){		// all light pins to OUTPUT
-  pinMode(led_50, OUTPUT);		
+  pinMode(led_50, OUTPUT);
   pinMode(led_51, OUTPUT);
   pinMode(led_52, OUTPUT);  
 }
