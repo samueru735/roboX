@@ -13,7 +13,8 @@ Servo myservo; //servo motor voor de pen
 void setup() {     // set digital i/o pins as outputs:  
   Serial.begin(9600); 
   leds.lightsOn(ON);  // call lightsOn() method from Lights library
-  myservo.attach(9);  //pin 9 wordt gebruikt voor de servo motor
+  myservo.attach(9);
+  draw.setServo(myservo);
 } 
 
 void loop() {   
@@ -63,7 +64,7 @@ void loop() {
 
   draw.chose();
   
-  myservo.write(draw.getVal());
-  delay(15);
+ // myservo.write(draw.getVal());
+  //delay(15);
 }
 
