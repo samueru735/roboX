@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
                }
 
-               //FragmentManager fragmnet = getSupportFragmentManager();
-               //fragmentManager.beginTransaction().replace(R.id.LinearLayout, fragment).commit();
+               //android.support.v4.app.FragmentManager frag = getSupportFragmentManager();
+               //frag.beginTransaction().replace(R.id.LinearLayout, fragment).commit();
            }
        });
 
@@ -161,6 +161,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        try {
+            btConn.sendData("c");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

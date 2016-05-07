@@ -109,14 +109,17 @@
         android:id="@+id/tvResult"/>
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <Button
             android:layout_width="25mm"
             android:layout_height="10mm"
-            android:layout_marginTop="2mm"
             android:layout_marginLeft="2mm"
             android:text="FASTER"
             android:id="@+id/faster"
@@ -126,14 +129,18 @@
         <Button
             android:layout_width="25mm"
             android:layout_height="10mm"
-            android:layout_marginTop="2mm"
             android:layout_marginLeft="2mm"
             android:text="SLOWER"
             android:id="@+id/slower"
             android:textColor="#FAFAFA"
             android:background="#212121"/>
-    </LinearLayout>
 
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="10mm"
+        android:text="AUTO PILOT"/>
+    </LinearLayout>
 </LinearLayout>
 
 

@@ -13,7 +13,6 @@ public class DrawActivity extends AppCompatActivity {
 
     private BluetoothConnection btConn;
     public Button line, dash, dot;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +22,6 @@ public class DrawActivity extends AppCompatActivity {
         dash = (Button) findViewById(R.id.dash);
         dot = (Button) findViewById(R.id.dot);
 
-
-        try {
-            btConn.sendData("c");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         line.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +54,7 @@ public class DrawActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 
