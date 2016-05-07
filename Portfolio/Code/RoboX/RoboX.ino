@@ -84,14 +84,12 @@ void loop() {
 
   if(btConnection == true)
   {
-    Lights.connection(TRUE);
+    leds.connection(true);
   }
   if(btConnection == false)
   {
-    Lights.connection(FALSE);
-  }
-  
-  switch(tank_leds)
+    leds.connection(false);
+  }  
   
   movement.drive();  // drive it
 
