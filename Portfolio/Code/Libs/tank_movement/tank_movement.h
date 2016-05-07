@@ -35,6 +35,7 @@ void uTurn(int);
 void brake(void);
 void increaseSpeed(void);
 void decreaseSpeed(void);
+void turnNinetyDegrees(int);
 int isDriving(void);
 int isTurning(void);
 int showSpeed(int);

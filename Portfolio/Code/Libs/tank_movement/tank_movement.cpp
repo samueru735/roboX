@@ -22,6 +22,10 @@ Movement::Movement(){
 void Movement::drive(){
 	analogWrite(speedPinR, speedR);  // output speed as PWM value  
 	analogWrite(speedPinL, speedL);  // output speed as PWM value  
+	if(	digitalRead(motorRightF) == HIGH && digitalRead(motorRightB) == LOW && digitalRead(motorLeftB) == LOW 
+	&& digitalRead(motorLeftF) == HIGH) {
+		Serial.println("Driving forward");
+	}
 }
 void Movement::driveDirection(int direction){
 	resetSpeed();
@@ -68,6 +72,24 @@ void Movement::uTurn(int direction)
 		digitalWrite(motorLeftB, LOW);
 	}  
 }
+void Movement::turnNinetyDegrees(int direction){
+	if(direction == LEFT){
+		digitalWrite(motorRightF, HIGH);
+		digitalWrite(motorRightB, LOW);        
+		digitalWrite(motorLeftF, LOW);
+		digitalWrite(motorLeftB, HIGH);		
+		Serial.println("Turning 90 degrees to the left");
+	}
+	else{
+		digitalWrite(motorRightB, HIGH);
+		digitalWrite(motorRightF, LOW);        
+		digitalWrite(motorLeftF, HIGH);
+		digitalWrite(motorLeftB, LOW);
+		Serial.println("Turning 90 degrees to the right");
+	}
+	delay(1000);
+	brake();
+}
 
 void Movement::brake(){
 	resetSpeed();
@@ -75,6 +97,7 @@ void Movement::brake(){
 	digitalWrite(motorRightB, LOW);         
 	digitalWrite(motorLeftB, LOW);
 	digitalWrite(motorLeftF, LOW);
+	Serial.println("Braking..");
 }
 void Movement::increaseSpeed(){
 	if(speedR < MAX-50){

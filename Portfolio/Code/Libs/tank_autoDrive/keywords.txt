@@ -1,0 +1,38 @@
+#######################################
+# Syntax Coloring Map For tank_leds
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+Movement KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+driveDirection	KEYWORD2
+turn		KEYWORD2
+uTurn		KEYWORD2
+brake		KEYWORD2
+showSpeed	KEYWORD2
+isDriving	KEYWORD2
+increaseSpeed	KEYWORD2
+decreaseSpeed	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+LEFT	LITERAL1
+RIGHT	LITERAL1
+NONE	LITERAL1
+BACKWARDS	LITERAL1
+FORWARD		LITERAL1
+MIN	LITERAL1
+MAX	LITERAL1
+STANDARD_SPEED LITERAL1
+TURNING_SPEED LITERAL1
