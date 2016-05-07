@@ -10,6 +10,7 @@
 //init
 int ledPin = 13;        // status LED 
 int irSensorPin = 4;
+bool btConnection = false;
 Lights leds;
 Movement movement;
 Draw draw;
@@ -54,6 +55,7 @@ void loop() {
       case'g': draw.setStyle(DASH);break;
       case'h': draw.setStyle(LINE);break;
       case't': draw.setStyle(STOP);break;
+      case'b': btConnection =true;break;
     }
     Serial.print("speed L: ");    
     Serial.println(movement.showSpeed(LEFT)); // monitor speed (0-255) left motor
@@ -79,6 +81,17 @@ void loop() {
     break;
     default:break;
   }
+
+  if(btConnection == true)
+  {
+    Lights.connection(TRUE);
+  }
+  if(btConnection == false)
+  {
+    Lights.connection(FALSE);
+  }
+  
+  switch(tank_leds)
   
   movement.drive();  // drive it
 

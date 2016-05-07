@@ -3,9 +3,33 @@
 Lights::Lights(){
   pinMode(led_50, OUTPUT);
   pinMode(led_51, OUTPUT);
-  pinMode(led_52, OUTPUT);  
+  pinMode(led_52, OUTPUT);
+  pinMode(led_1, OUTPUT);
 }
 
+void Lights::connection(int connectStatus)
+{
+	
+	if(connectStatus == TRUE)
+	{
+		if(kracht < 255)
+		{
+			kracht+=5;
+		}
+		analogWrite(led_1, kracht);
+		delay(50);
+	}
+	if(connectStatus == FALSE)
+	{
+		if(kracht >= 5)
+		{
+			kracht-=5;
+		}
+		analogWrite(led_1, kracht);
+		delay(50);
+	}
+	
+}
 void Lights::ledLeft(int state)
 { 
 	if(state == ON){
