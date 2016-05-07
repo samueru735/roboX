@@ -51,6 +51,8 @@ public class BluetoothConnection {
             findBT();
 
             openBT();
+            //bluetoothledje
+            sendData("b");
             return "Connected";
         }
         catch (Exception ex) {
