@@ -17,7 +17,7 @@
         android:textStyle="italic"
         android:fontFamily="sans-serif-thin"
         android:layout_gravity="center"
-       />
+        android:id="@+id/tvTitel"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="20mm"

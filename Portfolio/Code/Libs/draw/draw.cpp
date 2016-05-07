@@ -38,14 +38,14 @@ void Draw::drawing(bool signal){
 	{
 		
 		myservo.write(UP);
-		Serial.print("Angle = ");
-		Serial.println(UP);
+		//Serial.print("Angle = ");
+		//Serial.println(UP);
 	}
 	if(signal == false)
 	{
 		myservo.write(DOWN);
-		Serial.print("Angle = ");
-		Serial.println(DOWN);
+		//Serial.print("Angle = ");
+		//Serial.println(DOWN);
 	}    	
 }
 
