@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private String mac_address;
     private TextView tvConnStatus;
     private BluetoothConnection btConn;
-    private Button btnForward, btnBackwards, btnLeft, btnRight, btnStop, btnUturnLeft, btnUturnRight, btnFaster, btnSlower;
+    private Button btnForward, btnBackwards, btnLeft, btnRight, btnStop, btnUturnLeft, btnUturnRight, btnFaster, btnSlower, btnAuto;
     private TextView tvResult, tvSentData;
 
     @Override
@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity {
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                Fragment fragment;
-               switch (position){
+               switch (position) {
                    case 0:
                        fragment = new FragmentOne();
                        break;
-                    default:
-                        fragment = new FragmentOne();
-                        break;
+                   default:
+                       fragment = new FragmentOne();
+                       break;
                }
 
                //android.support.v4.app.FragmentManager frag = getSupportFragmentManager();
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         btnSlower = (Button)findViewById(R.id.slower);
         tvResult = (TextView)findViewById(R.id.tvResult);
         tvSentData = (TextView)findViewById(R.id.tvSentData);
+        btnAuto = (Button)findViewById(R.id.autoknop);
 
         btnForward.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,12 +162,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        btnAuto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    btConn.sendData("c");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
-        try {
-            btConn.sendData("c");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
 

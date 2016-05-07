@@ -139,7 +139,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="10mm"
-        android:text="AUTO PILOT"/>
+        android:text="AUTO PILOT"
+        android:id="@+id/autoknop"/>
     </LinearLayout>
 </LinearLayout>
 
