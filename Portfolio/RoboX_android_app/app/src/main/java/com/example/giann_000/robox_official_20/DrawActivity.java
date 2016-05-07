@@ -12,7 +12,7 @@ import java.io.IOException;
 public class DrawActivity extends AppCompatActivity {
 
     private BluetoothConnection btConn;
-    public Button line, dash, dot;
+    public Button line, dash, dot, auto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,7 @@ public class DrawActivity extends AppCompatActivity {
         line = (Button) findViewById(R.id.line);
         dash = (Button) findViewById(R.id.dash);
         dot = (Button) findViewById(R.id.dot);
+        auto = (Button) findViewById(R.id.autoDrive);
 
 
         line.setOnClickListener(new View.OnClickListener() {
@@ -53,8 +54,19 @@ public class DrawActivity extends AppCompatActivity {
                 }
             }
         });
-    }
 
+        auto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    btConn.sendData("c");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
 
 
 

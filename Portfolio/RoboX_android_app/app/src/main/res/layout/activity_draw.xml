@@ -20,7 +20,7 @@
         android:id="@+id/tvTitel"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="20mm"
+        android:layout_height="wrap_content"
         android:text="DOT"
         android:id="@+id/dot"
         android:background="#FFFFFF"
@@ -29,7 +29,7 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="20mm"
+        android:layout_height="wrap_content"
         android:text="DASH"
         android:id="@+id/dash"
         android:background="#FFFFFF"
@@ -37,9 +37,16 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="20mm"
+        android:layout_height="wrap_content"
         android:text="LINE"
         android:id="@+id/line"
+        android:background="#FFFFFF"
+        android:layout_marginTop="5dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="autodrive"
+        android:id="@+id/autoDrive"
         android:background="#FFFFFF"
         android:layout_marginTop="5dp"/>
 </LinearLayout>
